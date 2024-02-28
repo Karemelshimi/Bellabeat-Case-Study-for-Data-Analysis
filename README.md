@@ -24,7 +24,15 @@ This Kaggle data set contains personal fitness tracker from thirty fitbit users 
 Thirty eligible Fitbit users consented to the submission of personal tracker data.
 It contains 18 CSV files that iclude daily activity, daily steps, daily calories, daily intensities, hourly steps, hourly intensities, hourly calories, heartrat seconds, minute calories narrow and wide, minute intensities narrow and wide, minute steps narrow and wide, sleep day, and weight log info.
 
-The data is stored in a zip file in an excel CSV fromat it has long and wide format, i have verified the integrity of the data by oppening them in excel and SQL data bases and it has some limitations to it 
+The data is stored in csv files, the data contains files that have data long and wide format but most of the csv files are long formated.
+I measured the data and its credibility and it is not reliable as it only contains data about 30 fitbit users, which is not enough to make reliable insights.
+the originality of the data is derived from 30 legit fitbit users who participated in a survey via Amazon Mechanical Turk between 3/12/2016 and 5/12/2016.
+The data is biased and not comprehensive as the sample size is small and should have been bigger to make better predictions and eliminate the bias in the data, and the data also is outdated as it was collected in 2016 and it should contain data from march to may of 2016 but it only shows data for 31 one day from april to may so it has some missing data.
+
+The data is not cited or lincenced.
+
+
+
 
 
 
