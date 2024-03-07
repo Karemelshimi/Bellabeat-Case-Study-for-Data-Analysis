@@ -209,12 +209,13 @@ summary(hourly_intensities_new)
 
 The next visualization shows what weekdays have the most total steps to see when the users walk the most or are the most active at which day, and as it shows using the `geom_smooth()` we can see that during  Tuesday and Wednesday had the most total steps of all week days.
 ```{r}
-ggplot(data = daily_activity_new, mapping = aes(x = week_days, y = sum(totalsteps), fill = week_days)) +
-  geom_bar(stat = "identity" ) +
+ggplot(data = daily_activity_new, mapping = aes(x = totalsteps, y = week_days)) +
+  geom_smooth(aes(color = week_days)) +
   labs(title = "Total Steps in Weekdays") +
-  labs(x = "Total Steps", y = "Week Days") 
+  labs(x = "Total Steps", y = "Week Days")
 ```
-![Total_Steps_in_Weekdays](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/f97cd555-521e-4cac-9425-47b7e9cfd3b2)
+![Most Total Steps in Week Days](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/4f05e516-adc3-42db-9922-c8f7776242f7)
+
 #### TotalSteps VS Calories
 
 This visualization show the TotalSteps vs Calories.
@@ -310,5 +311,37 @@ ggplot(data = hourly_steps_new, mapping = aes(x = activityhour, y = steptotal, f
   labs(x = "Activity Hour", y = "Step Total")
 ```
 ![Activity Hour With the Most Steps](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/4a7b8ee8-e558-43e9-9d85-dd9ce4baa2e3)
+## Hourly Calories
+This visualization shows the hourly calories burned and as we can see that the most calories burned is between 4pm and 8pm and then gradualy goes down.
+The lowest calorie burning is between 12am and 4am.
+```{r}
+ggplot(data = hourly_calories_new, mapping = aes(x = activityhour, y = calories, color = calories)) +
+  geom_smooth(color = "red") +
+  labs(title = "Hourly Calories Burned") +
+  labs(x = "Activity Hour", y ="Calories")
+```
+![Hourly Calories](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/fdef219a-e165-48d6-8684-f80baf8c219d)
+## Hourly Intensities
+The intensities match the hourly burning calories as the highest intensities the user have during the day are between 4pm and 8pm and then starts to go down after that.
+The lowest intensity is between 12am and 4am.
+```{r}
+ggplot(data = hourly_intensities_new, mapping = aes(x = activityhour, y = totalintensity, fill = activityhour))+
+  geom_bar(stat = "identity") +
+  labs(title = "Hourly Intensities") +
+  labs(x = "Activity Hour", y = "Total Intensity")
+```
+![Hourly Intensities](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/482a4b5f-77c8-4991-a78b-9502fb2d3db2)
 
+Now we will merge two data frames together to get insight about the calories burned and the intensities.
+```{r}
+calories_x_intensity <- merge(hourly_calories_new, hourly_intensities_new, by = c('id', 'new_date'))
+```
+As you can see when the total intensity goes higher the burned calories increas so there is a positive correlation between the two factors.
+```{r}
+ggplot(data = calories_x_intensity, mapping = aes(x = calories, y = totalintensity)) +
+  geom_smooth()+
+  labs(title = "Total Intensity vs Calories")+
+  labs(x = "Calories", y= "Total Intensity")
+```
+![Calories vs Intensities](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/3147a8b5-5d40-4111-8110-591f83b64551)
 
