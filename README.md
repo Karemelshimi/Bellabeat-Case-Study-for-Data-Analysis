@@ -1,9 +1,29 @@
 # Bellabeat-Case-Study-for-Data-Analysis
-Bellabeat case study by using Fitbit data usage of smart devices to get valuable insights to use in Bellabeat's marketing strategy 
+
+Title: Bellabeat Case Study
+
+Author: Kareem Mohamed
+
+Date: March 8,2024
+
+## Reference
+
+1 <a href="#ask" id="toc-ask">Ask</a>
+
+2 <a href="#prepare" id="toc-ask">Prepare</a>
+
+3 <a href="#process" id="toc-ask">Process</a>
+
+4 <a href="#analyze" id="toc-ask">Analyze</a>
+
+5 <a href="#share" id="toc-ask">Share</a>
+
+6 <a href="#share" id="toc-ask">Share</a>
+
 
 ## Scenario
 Bellabeat is a high-tech manufacturer of health-focused products for women it believes that analyzing smart device fitness data could help unlock new growth opportunities for the company.
-I have been asked to focus on one of Bellabeat’s products and analyze smart device data to gain insight into how consumers are using their smart devices, then the insights that i will dicover will then help guide marketnig strategy for the company.
+I have been asked to focus on one of Bellabeat’s products and analyze smart device data to gain insight into how consumers are using their smart devices, then using these insights it will help guide the marketnig strategy for the company.
 
 # Ask
 Business Task: Analyzing the smart device usage data by Fitbit and get valuable insights then making recommendations based on these trend to help guide the marketing strategy.
@@ -201,25 +221,34 @@ summary(hourly_intensities_new)
 ```
 ![Screenshot (134)](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/d1f8f89b-0e10-4a0a-b1ae-16a44ffde34c)
 
-# Visualizations
+# Share
 
 ### Daily Activity
 
 ##### Most Total Steps in Week Days
 
-The next visualization shows what weekdays have the most total steps to see when the users walk the most or are the most active at which day, and as it shows using the `geom_smooth()` we can see that during  Tuesday and Wednesday had the most total steps of all week days.
+The next visualization shows what weekdays have the highest total steps to see when the users walked the, and as it shows using the `geom_smooth()` we can see that during  Sunday and Saturday had the highest total steps of all week days.
 ```{r}
 ggplot(data = daily_activity_new, mapping = aes(x = totalsteps, y = week_days)) +
   geom_smooth(aes(color = week_days)) +
-  labs(title = "Total Steps in Weekdays") +
+  labs(title = " Highest Total Steps in Weekdays") +
   labs(x = "Total Steps", y = "Week Days")
 ```
-![Most Total Steps in Week Days](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/4f05e516-adc3-42db-9922-c8f7776242f7)
+![Highest Total Steps in Weekdays](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/192b24e3-7be4-4676-9d9b-5a8562d71b28)
+
+And this visualization shows week days with the most total steps, as you can see that Tuesday and Wednesday have the most total steps of the week days
+i used the sum function to know which day has the most overall steps.
+```{r}
+ggplot(daily_activity_new, aes(x = week_days, y = sum(totalsteps), fill = week_days)) +
+         geom_bar(stat = "identity") +
+         labs(title = "Total Steps in Weekdays") +
+         labs(x = "Week Days", y = "Total Steps")
+```
+![Total Steps in Weekdays](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/ef9b560a-fe5f-4fb7-96d0-b94fbcc17c90)
 
 #### TotalSteps VS Calories
 
-This visualization show the TotalSteps vs Calories.
-As you can see that there is a positive  correlation between the total steps and the calories burned, as the steps increase the calorie burning increases.But at the same time people could be in the same step range like others but burn more calories.
+This visualization show the `TotalSteps vs Calories`as you can see that there is a positive  correlation between the total steps and the calories burned, as the steps increase the calorie burning increases, at the same time people could be in the same step range like others but burn more calories.
 ```{r}
 ggplot(data = daily_activity_new, mapping = aes(x = totalsteps, y = calories, color = new_date)) +
   geom_point() + geom_smooth(aes(y = calories), color = "red") +
@@ -231,7 +260,7 @@ ggplot(data = daily_activity_new, mapping = aes(x = totalsteps, y = calories, co
 ![TotalSteps VS Calories](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/fafc025a-4aef-4cb9-9b68-0739cef00464)
 
 ### Activiy Minutes vs Calories
-This visualization compares different types of activity minutes to the burned calories.
+These visualizations compare different types of activity minutes to the burned calories.
 #### Lightly Active Minutes
 The visualization shows how the lightly active minutes done by users affects the calories burned, you can see that when the minutes increase the calories being burned also increase.
 But also it shows that some cases have more lightly activity minutes but at the same time they burn the same amount of calories as the users who did fewer minutes.
@@ -255,7 +284,7 @@ ggplot(data = daily_activity_new, mapping = aes(x = calories, y = veryactiveminu
 ```
 ![Very Active Minutes](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/37304dd3-42e1-419d-9a11-95ced82b8a2e)
 #### Fairly Active Minutes
-There is also a positive correlation between faily active minutes and calories burned, as the minutes increase the calories burned also increase.
+There is also a positive correlation between fairly active minutes and calories burned, as the minutes increase the calories burned also increase.
 ```{R}
 ggplot(data =daily_activity_new , mapping = aes(x = calories, y = fairlyactiveminutes, color = new_date)) +
   geom_point() +
@@ -290,27 +319,31 @@ ggplot(data = sleep_X_activity, mapping = aes(x = hoursofsleep, y = calories, co
   labs(title = "Hours of Sleep vs Calories") +
   labs(x = "HoursOfSleep", y = "Calories")
 ```
-![Sleeping Hours vs Calories](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/7ede8535-dd7a-4458-9d41-b69d3aaa7493)
-#### Total Hours of Sleep in Week Days
-The visualization shows that Fridays are the most days in the week that users have the highest total sleep in.
+![Sleeping Hours vs Calories](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/555f7485-005a-4d45-ba8b-095a03fd8a67)
+
+
+#### Total Minutes Asleep in Week Days
+The visualization shows that Wednesday's are the most days in the week that users have the highest total minutes asleep in.
 ```{r}
-ggplot(data = sleep_day_new, mapping = aes(x = week_days, y = hoursofsleep, fill = week_days)) +
+ggplot(data = sleep_day_new, mapping = aes(x = week_days, y = totalminutesasleep, fill = week_days)) +
   geom_bar(stat = "identity") +
-  labs(title = "Total Hours Of Sleep in Week Days") +
-  labs(x = "Week Days", y = "Hours Of Sleep")
+  labs(title = "Total Minutes Asleep in Week Days") +
+  labs(x = "Week Days", y = "Minutes Asleep")
 ```
-![Total Hours of Sleep in Week Days](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/ad6a38c0-b601-436f-ba69-1485ba842bae)
+![Total Minutes Asleep in Week Days](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/d3ee6608-e2ad-48a2-b59e-b34145184d6a)
+
 ## Hourly Steps
 
 #### Activity Hour With the Most Steps
-With this visualization i'm trying to know what activity hour of the day the users do the most steps in, as you can see using the `geom_col()` the visualization shows that between 6:30 am and 12 pm the users are the most active that time and make the most steps of the day.
+With this visualization you can see what activity hour of the day the users do the most steps in, as you can see using the `geom_col()` the visualization shows that users do the most steps between 12pm and 7pm users do the most steps, and the lowest is between 12am and 4am.
 ```{r}
 ggplot(data = hourly_steps_new, mapping = aes(x = activityhour, y = steptotal, fill = activityhour)) +
-  geom_col()+
+  geom_bar(stat = "identity")+
   labs(title = " Most Steps During The Day") +
   labs(x = "Activity Hour", y = "Step Total")
 ```
-![Activity Hour With the Most Steps](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/4a7b8ee8-e558-43e9-9d85-dd9ce4baa2e3)
+![Activity Hour With the Most Steps](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/a69ebbe3-855f-4831-853d-2f0a6d7b4f74)
+
 ## Hourly Calories
 This visualization shows the hourly calories burned and as we can see that the most calories burned is between 4pm and 8pm and then gradualy goes down.
 The lowest calorie burning is between 12am and 4am.
@@ -322,7 +355,7 @@ ggplot(data = hourly_calories_new, mapping = aes(x = activityhour, y = calories,
 ```
 ![Hourly Calories](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/fdef219a-e165-48d6-8684-f80baf8c219d)
 ## Hourly Intensities
-The intensities match the hourly burning calories as the highest intensities the user have during the day are between 4pm and 8pm and then starts to go down after that.
+The intensities match the hourly burning calories as the highest intensities the user have during the day are between 12pm and 7pm and then starts to go down after that.
 The lowest intensity is between 12am and 4am.
 ```{r}
 ggplot(data = hourly_intensities_new, mapping = aes(x = activityhour, y = totalintensity, fill = activityhour))+
@@ -345,3 +378,14 @@ ggplot(data = calories_x_intensity, mapping = aes(x = calories, y = totalintensi
 ```
 ![Calories vs Intensities](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/3147a8b5-5d40-4111-8110-591f83b64551)
 
+# Act
+### Statistical summary of the analysis show these device usage trends :
+- The highest total steps were on sunday's and saturday's.
+- The most total steps of the week days were on tuesday's and wednesday's.
+- The users spend 3 hours of their day in lightly activity which made them burn calories adn stay healthy.
+- The users spend at least 20 minutes doing very active activity.
+- The users spend an average of 13 min daily on fairly activity.
+- On the average the users spend 16.5 hours in sedentary avtivity which is 68.7% of the day.
+- users sleep on average 7 hours and they spend around 30 minutes in bed before they sleep and they sleep more hours on wednesday's.
+- users are most active between 12pm and 7pm as they do the most steps that time.
+- users tend to burn the most calories from 12pm and 7pm and the lowest calories they burn is between 12am and 4am, they match their calorie burning with their intensity hours, the highest intensity of their day is between 12pm and 7pm and the lowest intensity is between 12am and 4am.
