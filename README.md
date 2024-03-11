@@ -379,6 +379,9 @@ ggplot(data = calories_x_intensity, mapping = aes(x = calories, y = totalintensi
 ![Calories vs Intensities](https://github.com/Karemelshimi/Bellabeat-Case-Study-for-Data-Analysis/assets/153403784/3147a8b5-5d40-4111-8110-591f83b64551)
 
 # Act
+
+After analyzing the data as you can see that fitbit can know their users habits and how active they are, how their day usualy looks like and how it organized by their activity as in light, fair, very, or just in sedentary. Knowing how the consumer sleeps and their habits and when they go to sleep , how much time do they take to actualy go to sleep all of this information can help them understand their user's. fitbit having this data can use it to actualy connect with their users and know them better and even help them in their daily life. Bellabeat should use the same information gathering methods, if bellabeat had access to same data for the users that they have they would help women by inetracting with them, telling them what they are lacking and what is best for them to improve their health and general life style, as well as connecting with them and creating strong customer bond and a great realtionship by making women trust them when they see a significant change in their life based on the recommendations that bellabeat can make for each one of them according to the user's statistics.
+
 ### Statistical summary of the analysis show these device usage trends :
 - The highest total steps were on sunday's and saturday's.
 - The most total steps of the week days were on tuesday's and wednesday's.
@@ -389,3 +392,13 @@ ggplot(data = calories_x_intensity, mapping = aes(x = calories, y = totalintensi
 - users sleep on average 7 hours and they spend around 30 minutes in bed before they sleep and they sleep more hours on wednesday's.
 - users are most active between 12pm and 7pm as they do the most steps that time.
 - users tend to burn the most calories from 12pm and 7pm and the lowest calories they burn is between 12am and 4am, they match their calorie burning with their intensity hours, the highest intensity of their day is between 12pm and 7pm and the lowest intensity is between 12am and 4am.
+
+### Recommendations
+
+By using the welnees tracker bellabeat can gather data to know their user's behavior like fitbit and using this information they can inform their users after watching their habit for a month with what they should adjust to make their life better and healthier For Example:
+
+- Knowing their bad days of sleep and finding a pattern like for example they sleep less on monday's because they tend to stay up more and they go to bed late so they sleep less hours than the rest of the week, so bellabeat can find this pattern when gathering the data and build a health check summary every week for their users with the most impartant changes and stuff that affect their welnees to notify them about these changes and it can be used for alot of other stuff to notify them about not just the sleeping hours.
+- They can inform their users if they are sitting long time by checking the step counter if it havent moved for specific amount of time and giving them notification on the app so they would know that they should be more active and get up.
+- Letting them know that the day is almost ending if they haven't done their average steps for the day.
+- showing the user's their intensity counter and setting a goal for them to achive it daily.
+- Doing competitions on the app for example for hitting a max intensity or max steps and giving them a specific gift or just making it to creat a motivational environment for them to achieve what they need.
