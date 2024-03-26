@@ -395,7 +395,7 @@ After analyzing the data as you can see that fitbit can know their users habits 
 
 ### Recommendations
 
-By using the welnees tracker bellabeat can gather data to know their user's behavior like fitbit and using this information they can inform their users after watching their habit for a month with what they should adjust to make their life better and healthier For Example:
+By using the wellnees tracker bellabeat can gather data to know their user's behavior like fitbit and using this information they can inform their users after watching their habit for a month with what they should adjust to make their life better and healthier For Example:
 
 - Knowing their bad days of sleep and finding a pattern like for example they sleep less on monday's because they tend to stay up more and they go to bed late so they sleep less hours than the rest of the week, so bellabeat can find this pattern when gathering the data and build a health check summary every week for their users with the most impartant changes and stuff that affect their welnees to notify them about these changes and it can be used for alot of other stuff to notify them about not just the sleeping hours.
 - They can inform their users if they are sitting long time by checking the step counter if it havent moved for specific amount of time and giving them notification on the app so they would know that they should be more active and get up.
